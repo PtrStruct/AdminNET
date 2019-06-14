@@ -1,0 +1,16 @@
+﻿<Application x:Class="AdminNET.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AdminNET"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/AdminNET.MenuListViewTheme.xaml"/>
+                <ResourceDictionary Source="Themes/AdminNET.ListViewContainerTheme.xaml"/>
+                <ResourceDictionary Source="Themes/AdminNET.CategoryListView.xaml"/>
+                <ResourceDictionary Source="Themes/AdminNET.ModernInstallButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>
