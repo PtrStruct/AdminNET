@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdminNET.MVVM.Model
 {
-    class CategoryItem
+    class CatalogItem
     {
         private string _Title;
 

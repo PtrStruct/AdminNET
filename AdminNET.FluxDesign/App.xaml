@@ -1,0 +1,9 @@
+﻿<Application x:Class="AdminNET.FluxDesign.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AdminNET.FluxDesign"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary Source="Themes/FluxDesign.xaml"/>
+    </Application.Resources>
+</Application>

@@ -6,16 +6,14 @@
         xmlns:local="clr-namespace:AdminNET"
         xmlns:viewModel="clr-namespace:AdminNET.MVVM.ViewModel"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:assists="clr-namespace:AdminNET.Core.Media.Assists"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
 
     <Window.DataContext>
-        <viewModel:CategoryViewModel/>
+        <viewModel:BaseViewModel/>
     </Window.DataContext>
 
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
@@ -154,53 +152,20 @@
                     </ListViewItem>
                 </ListView>
 
+
+                <Button Width="20"
+                        Height="20"
+                        BorderThickness="0" 
+                        Command="{Binding SettingsCommand}">
+                </Button>
             </StackPanel>
 
-            
+
+
         </Border>
+        <ContentPresenter Content="{Binding CurrentView}"
+                          Grid.Column="1">
 
-        <ListView x:Name="CategoryCollection"
-                  ItemsSource="{Binding CategoryItems}"
-                  BorderThickness="0"
-                  ItemContainerStyle="{StaticResource ResourceKey=CategoryListViewTheme}"
-                  Grid.Column="1">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="4" 
-                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Width="140"
-                            Height="160"
-                            BorderThickness="1"
-                            BorderBrush="Silver"
-                            CornerRadius="4"
-                            Margin="10"
-                            SnapsToDevicePixels="True">
-                        <StackPanel SnapsToDevicePixels="True" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Image Source="{Binding Icon}" 
-                                   Width="50" 
-                                   RenderOptions.BitmapScalingMode="Fant"
-                                   Margin="0,0,0,5"/>
-                            <TextBlock FontFamily="Tahoma" Text="{Binding Title}" HorizontalAlignment="Center" FontSize="10" FontWeight="Bold" TextOptions.TextFormattingMode="Ideal" />
-                            <TextBlock FontFamily="Tahoma" Text="{Binding Description}" HorizontalAlignment="Center" Foreground="#8C8C8C" FontSize="10" TextOptions.TextFormattingMode="Ideal" TextOptions.TextHintingMode="Auto" />
-
-                            <Button Margin="0,15,0,0" Width="60" Height="20"  Style="{StaticResource ModernInstallButton}">
-                                <TextBlock Text="Certified" 
-                                           FontSize="10"
-                                           FontWeight="Light"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Foreground="White"
-                                           FontFamily="Tahoma"/>
-                            </Button>
-                            
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        </ContentPresenter>
     </Grid>
 </Window>

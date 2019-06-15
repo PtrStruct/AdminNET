@@ -9,16 +9,16 @@ using AdminNET.MVVM.Model;
 
 namespace AdminNET.MVVM.ViewModel
 {
-    class CategoryViewModel : ObservableObject
+    class CatalogViewModel : ObservableObject
     {
-        public ObservableCollection<CategoryItem> CategoryItems { get; set; }
-        public CategoryViewModel()
+        public ObservableCollection<CatalogItem> CategoryItems { get; set; }
+        public CatalogViewModel()
         {
-            CategoryItems = new ObservableCollection<CategoryItem>();
+            CategoryItems = new ObservableCollection<CatalogItem>();
 
             for (int i = 0; i < 12; i++)
             {
-                CategoryItems.Add(new CategoryItem
+                CategoryItems.Add(new CatalogItem
                 {
                     Title = "React",
                     Description = "A Powerful JS Library",

@@ -1,0 +1,108 @@
+﻿<Window x:Class="AdminNET.MVVM.View.SettingsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminNET.MVVM.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="SettingsWindowView" Height="600" Width="1000"
+        Background="#FFFFFF"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="TitleBar"
+                           Height="100"/>
+            <RowDefinition x:Name="MainContent"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#F4F4F4"
+                MouseDown="SettingsTitleBar_OnMouseDown"
+                x:Name="SettingsTitleBar">
+            <Border.Effect>
+                <DropShadowEffect  ShadowDepth="1"
+                                   Direction="270"
+                                   Color="#E4E4E4"
+                                   Opacity="0.6"
+                                   BlurRadius="0.5"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBlock Text="Cancel"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="#7C5EFA"
+                           FontWeight="Medium"
+                           Margin="30,0,0,0"
+                           >
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <Trigger Property ="IsMouseOver" Value="True">
+                                    <Setter Property= "Cursor" Value="Hand"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Grid.Column="1">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Edit Configuration"
+                                   FontFamily="Arial"
+                                   FontWeight="Medium"
+                                   FontSize="14"
+                                   Margin="5"/>
+                        <TextBlock Text="AdminNET" 
+                                   HorizontalAlignment="Center"
+                                   
+                                   FontFamily="Open Sans"
+                                   Foreground="#8C8C8C" FontSize="10" TextOptions.TextFormattingMode="Ideal" TextOptions.TextHintingMode="Auto"/>
+                    </StackPanel>
+                </StackPanel>
+
+
+                <Grid Column="2">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center"/>
+                        <TextBlock Text="JSON Serialization"
+                                   FontFamily="Open Sans"
+                                   FontWeight="Medium"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"
+                                   Margin="5,0,0,0"/>
+                    </StackPanel>
+
+                    <Button Width="100" Height="25" 
+                            HorizontalAlignment="Right"
+                            Margin="0,0,20,0"
+                            Style="{StaticResource ModernInstallButton}">
+                        
+
+                        <TextBlock Text="Review &amp; Run"
+                                   Foreground="White"
+                                   FontWeight="Medium"/>
+                    </Button>
+                </Grid>
+                
+
+            </Grid>
+
+
+
+        </Border>
+        
+
+    </Grid>
+</Window>
